@@ -5,7 +5,7 @@ public class News
     private String mTitle;
     private String mAuthor;
     private String mDate;
-    private String murl;
+    String murl;
 
     News(String title,String author,String url, String date)
     {

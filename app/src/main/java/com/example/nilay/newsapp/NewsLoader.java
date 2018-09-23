@@ -9,9 +9,11 @@ import java.net.URL;
 
 public class NewsLoader extends AsyncTaskLoader<String>
 {
-    NewsLoader(Context context)
+    String s;
+    NewsLoader(Context context, String a)
     {
         super(context);
+        s=a;
     }
 
     @Override
@@ -23,7 +25,7 @@ public class NewsLoader extends AsyncTaskLoader<String>
     @Override
     public String loadInBackground() {
         Log.e("NewsLoader","loadInBackground");
-        URL url= QueryUtils.createUrl(QueryUtils.createStringUrl());
+        URL url= QueryUtils.createUrl(QueryUtils.createStringUrl(s));
         String jsonResponse="";
         try {
             jsonResponse=QueryUtils.makeHttpRequest(url);

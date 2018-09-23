@@ -26,7 +26,7 @@ public class QueryUtils
 {
     private static final String LOG_TAG = "QueryUtils" ;
 
-    static String createStringUrl() {
+    static String createStringUrl(String s) {
         Uri.Builder builder = new Uri.Builder();
         builder.scheme("http")
                 .encodedAuthority("content.guardianapis.com")
@@ -34,7 +34,7 @@ public class QueryUtils
                 .appendQueryParameter("order-by", "newest")
                 .appendQueryParameter("show-references", "author")
                 .appendQueryParameter("show-tags", "contributor")
-                .appendQueryParameter("q", "debate")
+                .appendQueryParameter("q", s)
                 .appendQueryParameter("api-key", "0e8aa297-fb9d-4652-9912-e09050980aaf");
         String url = builder.build().toString();
         return url;
